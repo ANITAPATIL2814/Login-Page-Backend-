@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'login_app/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'login_app/css/dashboard.css' %}">
+
+</head>
+<body>
+    <div class="container">
+        <div class="form-box" >
+            <h1 id="title">..Dashboard..</h1>
+            <form>
+                <table border="1" class="inside-table">
+                    <tr>
+                        <th>Sr No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    {% for x in data %}
+                    <tr>
+                        <td>{{forloop.counter}}</td> 
+                        <td>{{x.name}}</td>
+                        <td>{{x.email}}</td>
+                        <td>{{x.password}}</td>
+                        <td><a href="/edit/{{x.id}}">Edit</a></td>
+                        <td><a href="/delete/{{x.id}}">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </form>
+            <a href="/login"><button class="btn"><h3>Login Again</h3></button></a>
+        </div>
+         
+    </div>
+    
+</body>
+</html>

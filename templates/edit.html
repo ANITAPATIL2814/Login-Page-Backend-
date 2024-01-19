@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>updated page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'login_app/css/style.css' %}">
+</head>
+<body>
+    <form method="POST" action="/edit/{{data.id}}">
+        {% csrf_token %}   
+        <table >
+            <div class="container">
+                <div class="form-box">
+                    <h1 id="title">..Login page..</h1>
+                    <form>
+                        <div class="input-group">
+                            <div class="input-field" id="nameField">
+                                <i class="fa fa-user"></i>
+                                <input type="text" value="{{data.name}}" name="uname">
+                            </div>
+                            <div class="input-field">
+                                <i class="fa fa-envelope"></i>
+                                <input type="email" value="{{data.email}}"  name="uemail">
+                            </div>
+                            <div class="input-field">
+                                <i class="fa fa-lock"></i>
+                                <input type="password" value="{{data.password}}"  name="upass">
+                            </div>
+                            <h2 class="or">
+                                <span class="span-or">OR</span>
+                            </h2>  
+                        </div>
+                        <div class="btn-field">
+                            <button type="submit" value="update" id="loginBtn" name="ulogin">Login</button>
+                            <button type="submit" class="disable" id="signinBtn" name="usign">Logout</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </table>
+    </form>
+    <script src="{% static 'js\main.js' %}"></script>
+</body>
+</html>
