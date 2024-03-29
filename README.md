@@ -23,6 +23,7 @@ This project is a simple Django application that provides a login page with vari
 - HTML
 - CSS
 - JS
+- MySql
   
 ![Screenshot 2024-01-26 222959](https://github.com/ANITAPATIL2814/Login-Page-Backend-/assets/142707200/3e0176ab-b5b2-4970-8c51-4047e0620178)
 
